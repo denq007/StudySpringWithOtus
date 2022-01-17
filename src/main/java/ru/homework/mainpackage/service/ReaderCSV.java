@@ -1,4 +1,4 @@
-package service;
+package ru.homework.mainpackage.service;
 
 import java.util.List;
 

@@ -1,20 +1,16 @@
 package ru.homework.mainpackage;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.homework.mainpackage.service.ReaderCSVImpl;
+import ru.homework.mainpackage.config.AppConfig;
 
 @SpringBootApplication
-@EnableConfigurationProperties
+@EnableConfigurationProperties(AppConfig.class)
 public class Demo {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context =
-                new ClassPathXmlApplicationContext("/spring-context.xml");
-        ReaderCSVImpl service = context.getBean(ReaderCSVImpl.class);
-        System.out.println(service.loadFile());
-
+        SpringApplication.run(Demo.class, args);
     }
 
 }

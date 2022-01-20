@@ -2,18 +2,23 @@ package ru.homework.mainpackage.service;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.stereotype.Service;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 @Getter
 @Setter
+@Service
 public class ReaderCSVImpl implements ReaderCSV {
-    String csvFileName;
 
-    public List<List<String>> loadFile() {
+
+    public List<List<String>> loadFile(String csvFileName) {
         List<List<String>> lines = new ArrayList<>();
 
         try {

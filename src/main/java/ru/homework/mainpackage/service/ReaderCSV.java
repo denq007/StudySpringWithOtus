@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface ReaderCSV {
 
-    List<List<String>> loadFile();
+    List<List<String>> loadFile(String path);
 }
